@@ -44,7 +44,7 @@ padding-bottom: 40px;
 
 
 /*iMAGE LOIC*/
-.article_photo{
+.article_photo {
     width: 300px;
     height: 300px;
     font-size: 30px;  
@@ -52,14 +52,22 @@ padding-bottom: 40px;
     border-radius: 50%; /* Pour créer un cadre rond */
     position: relative; /* Pour que les animations se basent sur la position */
     box-shadow: 5px 45px 60px rgba(0, 0, 0, 0.4); /* Ombre derrière le cadre */
-
     opacity: 0;
-    transform: translateX(100px); /* Déplacez l'élément vers le haut de 50 pixels */
-    transition: opacity 2s ease, transform 1s ease; /* Ajoutez une transition */
+    transform: scale(0.5); /* Le cadre est initialement réduit */
+    transition: opacity 2s ease, transform 1s ease, box-shadow 1s ease; /* Ajoutez une transition */
+}
+
+.article_photo.active {
+    opacity: 1;
+    transform: translateX(0); /* Annulez le déplacement */
 }
 
 .article_photo:hover .image {
     transform: scale(1.1); /* Zoom de 10% au survol */
+  }
+
+  .article_photo:hover {
+    box-shadow: 5px 35px 50px 1px rgba(0, 0, 0, 0.6); /* Ombre derrière le cadre */
   }
 
 .image {

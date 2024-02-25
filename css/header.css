@@ -62,7 +62,8 @@
     font-size: 28px;
 
     opacity: 0; /* Cacher initialement le titre */
-    transition: opacity 1s ease; /* Transition d'opacité de 2 secondes */
+    transition: opacity 2s ease, transform 1s ease;
+    transform: translateX(50px);
 }
 
 .header_navbar_logo_name{    /* Loic CLAUDE */
@@ -96,8 +97,12 @@
     border-radius: 20px;
     color: #007bff;
     text-decoration: none;
-    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, opacity 2s ease, transform 1s ease;
     margin-left: 150px;
+    font-weight: bold;
+
+    opacity: 0;
+    transform: translateX(50px) translateY(-50px); 
   }
   
   .btn-get-started:hover {

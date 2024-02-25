@@ -18,6 +18,7 @@ $('.header_navbar_menu_link').click(function(e) {
 document.addEventListener("DOMContentLoaded", function() {
   var title = document.querySelector('.header_navbar_logo_intro');
   setTimeout(function() {
+    title.style.transform = 'translateX(0)';
     title.style.opacity = 1; // Changer l'opacité pour montrer le titre
   }, 10); // Ajouter un délai de 0.1 seconde avant de montrer le titre
 });
@@ -38,6 +39,34 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 700); 
   });
 
+  document.addEventListener("DOMContentLoaded", function() {
+    var title = document.querySelector('.btn-get-started');
+    setTimeout(function() {
+      title.style.transform = 'translateY(0)';
+      title.style.transform = 'translateX(0)';
+      title.style.opacity = 1;
+    }, 700); 
+  });
+
+
+/* ZOOM PHOTO */
+  $(document).ready(function() {
+    var articlePhoto = $('.article_photo');
+    var windowHeight = $(window).height();
+    var scrollPosition = $(window).scrollTop();
+
+    $(window).scroll(function() {
+        scrollPosition = $(this).scrollTop();
+
+        articlePhoto.each(function() {
+            var offsetTop = $(this).offset().top;
+
+            if (scrollPosition > offsetTop - windowHeight + 100) {
+                $(this).addClass('active');
+            }
+        });
+    });
+});
 
   //mouvement pour les skill
   document.addEventListener("DOMContentLoaded", function() {
@@ -76,13 +105,11 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       });
     }
-    
     // Créer un observer pour surveiller l'élément
     var options = {
       root: null,
       threshold: 0.2 // Pourcentage de visibilité requis pour déclencher l'observation
     };
-    
     var observer = new IntersectionObserver(revealText, options);
     
     // Commencer à observer l'élément
@@ -134,29 +161,6 @@ document.addEventListener("DOMContentLoaded", function() {
     var observer = new IntersectionObserver(revealText, options);
     observer.observe(title);
   });
-
-/*PHOTO PARTIE ABOUT*/
-  document.addEventListener("DOMContentLoaded", function() {
-    var title = document.querySelector('.article_photo');
-    
-    function revealText(entries, observer) {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = 1;
-          entry.target.style.transform = 'translateX(0)'; // Déplacez l'élément vers sa position originale
-          observer.unobserve(entry.target);
-        }
-      });
-    }
-    var options = {
-      root: null,
-      threshold: 0.5
-    };
-    
-    var observer = new IntersectionObserver(revealText, options);
-    observer.observe(title);
-  });
-
 
 
 
@@ -212,6 +216,71 @@ document.addEventListener("DOMContentLoaded", function() {
         if (entry.isIntersecting) {
           entry.target.style.opacity = 1;
           entry.target.style.transform = 'translateY(0)'; // Déplacez l'élément vers sa position originale
+          observer.unobserve(entry.target);
+        }
+      });
+    }
+    var options = {
+      root: null,
+      threshold: 0.5
+    };
+    
+    var observer = new IntersectionObserver(revealText, options);
+    observer.observe(title);
+  });
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var title = document.querySelector('.Titre_SNBOT');
+    
+    function revealText(entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateX(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }
+    var options = {
+      root: null,
+      threshold: 0.5
+    };
+    
+    var observer = new IntersectionObserver(revealText, options);
+    observer.observe(title);
+  });
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var title = document.querySelector('.Titre_PlayerRUN');
+    
+    function revealText(entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateX(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }
+    var options = {
+      root: null,
+      threshold: 0.5
+    };
+    
+    var observer = new IntersectionObserver(revealText, options);
+    observer.observe(title);
+  });
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var title = document.querySelector('.Titre_Portfolio');
+    
+    function revealText(entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateX(0)';
           observer.unobserve(entry.target);
         }
       });

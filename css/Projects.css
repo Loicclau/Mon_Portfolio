@@ -52,7 +52,7 @@
     float: right;
     border-radius: 20px; /*Angle rond*/
     margin-left: 15px; /*Texte pas coller au carrousel*/
-    margin-top: 20px; /* pas coller en hayt*/
+    margin-top: 20px; /* pas coller en haut*/
 }
 
 .carrouselGauche2{
@@ -66,11 +66,10 @@
     float: left;
     border-radius: 20px; /*Angle rond*/
     margin-right: 15px; /*Texte pas coller au carrouselGauche2*/
-    margin-top: 20px; /* pas coller en hayt*/
-
+    margin-top: 20px; /* pas coller en haut*/
     opacity: 0;
-    transform: translateX(-50px); /* Déplacez l'élément vers le haut de 50 pixels */
-    transition: opacity 2s ease, transform 1s ease; /* Ajoutez une transition */
+    transform: translateX(-50px); 
+    transition: opacity 2s ease, transform 1s ease; 
 }
 
 
@@ -119,6 +118,21 @@
     font-size: 24px;
 }
 
+.Titre_SNBOT{
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 2s ease, transform 1s ease;
+}
+.Titre_PlayerRUN{
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 2s ease, transform 1s ease;
+}
+.Titre_Portfolio{
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 2s ease, transform 1s ease;
+}
 .texte_projets{
     opacity: 0;
     transform: translateY(50px); /* Déplacez l'élément vers le haut de 50 pixels */
@@ -248,6 +262,7 @@
         height: 184px;
         float: right;
         clear: both; 
+        margin-right: 0; /*Video carrouselGauche2 centre*/
     }
 
     #container_image, #container_image2, #container_image3{
