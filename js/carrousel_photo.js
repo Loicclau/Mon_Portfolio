@@ -26,7 +26,7 @@ document.body.onload = function () {
   }
   afficherMasquer();
 
-  /* code carrousel SN-BOT*/
+  /* code carrousel Projet Playeur RUN*/
   nbr2 = 3;
   p2 = 0;
   container_image2 = document.getElementById("container_image2");
@@ -52,6 +52,33 @@ document.body.onload = function () {
     container_image2.appendChild(div2);
   }
   afficherMasquer2();
+
+  /* code carrousel stock iris*/
+  nbr3 = 5;
+  p3 = 0;
+  container_image3 = document.getElementById("container_image4");
+  g3 = document.getElementById("g3");
+  d3 = document.getElementById("d3");
+  container_image3.style.width = 442 * nbr3 + "px";
+
+  // Créer la balise vidéo
+  videoDiv3 = document.createElement("div");
+  videoDiv3.className = "photo";
+  video3 = document.createElement("video");
+  video3.src = "vid/video_presentation_stock.mp4";
+  video3.loop = true; // Ajouter l'attribut loop
+  video3.muted = true; // Ajouter l'attribut muted
+  video3.autoplay = true; // Ajouter l'attribut autoplay
+  videoDiv3.appendChild(video3);
+  container_image3.appendChild(videoDiv3);
+
+  for (i = 1; i <= nbr3; i++) {
+    div3 = document.createElement("div3");
+    div3.className = "photo";
+    div3.style.backgroundImage = "url('img/GestionDeStock" + i + ".png')";
+    container_image3.appendChild(div3);
+  }
+  afficherMasquer3();
 };
 /* fin de onload */
 
@@ -97,6 +124,27 @@ function afficherMasquer2() {
   else d2.style.visibility = "visible";
 }
 
+d3.onclick = function () {
+  if (p3 > -nbr3 + 1) p3--;
+  container_image3.style.transform = "translate(" + p3 * 442 + "px)";
+  container_image3.style.transition = "all 0.5s ease";
+  afficherMasquer3();
+};
+g3.onclick = function () {
+  if (p3 < 0) p3++;
+  container_image3.style.transform = "translate(" + p3 * 442 + "px)";
+  container_image3.style.transition = "all 0.5s ease";
+  afficherMasquer3();
+};
+
+function afficherMasquer3() {
+  if (p3 == 0) g3.style.visibility = "hidden";
+  else g3.style.visibility = "visible";
+
+  if (p3 == -nbr3 + 1) d3.style.visibility = "hidden";
+  else d3.style.visibility = "visible";
+}
+
 // Fonction pour réinitialiser la variable p
 //remettre les carrousels sur la video si le format d'ecran change
 function resetP() {
@@ -109,6 +157,11 @@ function resetP() {
   container_image2.style.transform = "translate(" + p2 * -442 + "px)";
   container_image2.style.transition = "all 0.5s ease";
   afficherMasquer2();
+
+  p3 = 0;
+  container_image3.style.transform = "translate(" + p3 * -442 + "px)";
+  container_image3.style.transition = "all 0.5s ease";
+  afficherMasquer3();
 }
 
 // Ajouter un écouteur d'événement pour surveiller les changements dans le media query
