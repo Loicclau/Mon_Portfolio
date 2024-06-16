@@ -99,10 +99,11 @@
   border-radius: 20px;
   color: #007bff;
   text-decoration: none;
-  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s,
+  transition: background-color 0.4s, color 0.4s, box-shadow 0.4s,
     opacity 2s ease, transform 1s ease;
   margin-left: 150px;
   font-weight: bold;
+  overflow: hidden;
 
   opacity: 0;
   transform: translateX(50px) translateY(-50px);
@@ -112,6 +113,54 @@
   background-color: #007bff;
   color: #fff;
   box-shadow: 0px 0px 60px 3px rgba(0, 123, 255, 0.5); /* Ajout de l'ombre lors du survol */
+}
+
+.btn-get-started::after {
+  content: "";
+  display: block;
+  width: 180px;
+  height: 19px;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(130deg);
+  position: absolute;
+  left: 120px;
+}
+
+.btn-get-started::before {
+  content: "";
+  display: block;
+  height: 9px;
+  width: 100%;
+  background: rgb(255, 255, 255, 0.2);
+  transform: rotate(130deg);
+  position: absolute;
+  left: 120px;
+}
+
+.btn-get-started:hover.btn-get-started::before {
+  animation: btnTrais-2 0.5s ease-in-out 0.3s;
+}
+
+.btn-get-started:hover.btn-get-started::after {
+  animation: btnTrais 0.6s ease-in-out 0.3s;
+}
+
+@keyframes btnTrais {
+  from {
+    left: 210px;
+  }
+  to {
+    left: -170px;
+  }
+}
+
+@keyframes btnTrais-2 {
+  from {
+    left: 180px;
+  }
+  to {
+    left: -170px;
+  }
 }
 
 /* menu responsive*/
